@@ -40,7 +40,7 @@ namespace HostLookup
             // Start-Sound
             try
             {
-                string soundPfad = @"C:\Users\kristian.pena\Documents\Projekt\HostLookup\HostLookup\start.wav";
+                string soundPfad = @"C:\Users\######\Documents\Projekt\HostLookup\HostLookup\start.wav";
                 if (File.Exists(soundPfad))
                 {
                     SoundPlayer player = new SoundPlayer(soundPfad);
@@ -104,12 +104,12 @@ namespace HostLookup
 
         #region Excel laden
 
-        private void btnDateiW‰hlen_Click(object sender, EventArgs e)
+        private void btnDateiW√§hlen_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
                 Filter = "Excel-Dateien (*.xlsx;*.xls;*.xlsm)|*.xlsx;*.xls;*.xlsm",
-                Title = "Excel-Datei ausw‰hlen"
+                Title = "Excel-Datei ausw√§hlen"
             };
 
             if (ofd.ShowDialog() == DialogResult.OK)
@@ -162,7 +162,7 @@ namespace HostLookup
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Fehler beim ÷ffnen der Datei:\n" + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Fehler beim √ñffnen der Datei:\n" + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dateiGeladen = false;
                     btnAdd.Enabled = false;
                 }
@@ -177,13 +177,13 @@ namespace HostLookup
 
         #endregion
 
-        #region Hostnames hinzuf¸gen
+        #region Hostnames hinzuf√ºgen
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!dateiGeladen)
             {
-                MessageBox.Show("Bitte zuerst eine Excel-Datei ausw‰hlen.", "Warnung",
+                MessageBox.Show("Bitte zuerst eine Excel-Datei ausw√§hlen.", "Warnung",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -203,14 +203,14 @@ namespace HostLookup
                 string hostname = raw.Trim();
                 if (gesammelteDaten.Exists(d => d.StartsWith(hostname + ";")))
                 {
-                    listBoxLogs.Items.Add($"'{hostname}' bereits hinzugef¸gt.");
+                    listBoxLogs.Items.Add($"'{hostname}' bereits hinzugef√ºgt.");
                     continue;
                 }
 
                 if (excelDaten.TryGetValue(hostname, out var daten))
                 {
                     gesammelteDaten.Add($"{hostname};CAP;1;{daten.MAC};{daten.UUID};1");
-                    listBoxLogs.Items.Add($"Hinzugef¸gt: {hostname} | MAC: {daten.MAC} | UUID: {daten.UUID}");
+                    listBoxLogs.Items.Add($"Hinzugef√ºgt: {hostname} | MAC: {daten.MAC} | UUID: {daten.UUID}");
                     added++;
                     btnExportCSV.Enabled = true;
                 }
@@ -221,7 +221,7 @@ namespace HostLookup
                 }
             }
 
-            MessageBox.Show($"Fertig: {added} hinzugef¸gt, {notFound} nicht gefunden.",
+            MessageBox.Show($"Fertig: {added} hinzugef√ºgt, {notFound} nicht gefunden.",
                 "Ergebnis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -250,7 +250,7 @@ namespace HostLookup
                 {
                     var lines = new List<string>
                     {
-                        "Computer.Computername;Computer.Dom‰ne;Computer.Dom‰ne J/N;Computer.MAC-Adresse;Computer.UUID;Computer.PXE f‰hig"
+                        "Computer.Computername;Computer.Dom√§ne;Computer.Dom√§ne J/N;Computer.MAC-Adresse;Computer.UUID;Computer.PXE f√§hig"
                     };
                     lines.AddRange(gesammelteDaten);
 
@@ -276,7 +276,7 @@ namespace HostLookup
 
         #endregion
 
-        #region Form schlieﬂen
+        #region Form schlie√üen
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
