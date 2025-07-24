@@ -1,0 +1,5 @@
+C:\Users\######\Documents\Projekt\HostLookup\HostLookup\obj\Debug\net7.0\HostLookup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\######\Documents\Projekt\HostLookup\HostLookup\obj\Debug\net7.0\HostLookup.AssemblyInfoInputs.cache
+C:\Users\######\Documents\Projekt\HostLookup\HostLookup\obj\Debug\net7.0\HostLookup.AssemblyInfo.cs
+C:\Users\######\Documents\Projekt\HostLookup\HostLookup\obj\Debug\net7.0\HostLookup.csproj.CoreCompileInputs.cache
+C:\Users\######\Documents\Projekt\HostLookup\HostLookup\obj\Debug\net7.0\HostLookup.csproj.AssemblyReference.cache
